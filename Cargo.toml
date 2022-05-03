@@ -1,0 +1,14 @@
+[package]
+name = "sword"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+anyhow = "1.0.57"
+quick-xml = { version = "0.22", features = [ "serialize" ] }
+reqwest = "0.11.10"
+serde = { version = "1.0.137", features = ["derive"] }
+serde_xml = "0.9.1"
+tokio = {version ="1", features =["full"]}
