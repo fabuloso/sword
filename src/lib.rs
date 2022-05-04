@@ -12,9 +12,11 @@ pub async fn read_uk_sanctions_list() -> anyhow::Result<()> {
 
     let sanctions: ArrayOfFinancialSanctionsTarget = quick_xml::de::from_str(&sanctions_list)?;
 
-    for ele in sanctions.target {
-        println!("{:?}", ele);
-    }
+    sanctions
+        .target
+        .into_iter()
+        .filter(|t| t.group_type != "Individual")
+        .for_each(|t| println!("{:?}", t));
 
     Ok(())
 }

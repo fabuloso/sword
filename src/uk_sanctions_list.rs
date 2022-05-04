@@ -8,6 +8,8 @@ pub struct ArrayOfFinancialSanctionsTarget {
 
 #[derive(Deserialize, Debug)]
 pub struct Designation {
+    #[serde(rename = "GroupTypeDescription")]
+    pub group_type: String,
     #[serde(rename = "Name6")]
     pub name6: String,
     pub name1: String,
