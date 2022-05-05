@@ -1,4 +1,4 @@
-use crate::model::ArrayOfFinancialSanctionsTarget;
+use crate::model::{ArrayOfFinancialSanctionsTarget, Designation, Person};
 
 pub async fn read_uk_sanctions_list() -> anyhow::Result<()> {
     println!("Start Fetching");
@@ -24,4 +24,8 @@ async fn fetch() -> Result<String, anyhow::Error> {
     .text()
     .await?;
     Ok(sanctions_list)
+}
+
+fn to_person(target: Designation) -> Person {
+    Person {}
 }

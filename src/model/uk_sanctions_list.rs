@@ -24,3 +24,12 @@ pub struct Designation {
     #[serde(rename = "Individual_DateOfBirth")]
     pub date_of_birth: String,
 }
+
+impl Designation {
+    fn get_name(&self) -> String {
+        format!(
+            "{} {} {} {} {} {} {}",
+            self.title, self.name6, self.name1, self.name2, self.name3, self.name4, self.name5
+        )
+    }
+}

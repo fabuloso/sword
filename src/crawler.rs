@@ -1,3 +1,4 @@
+mod crawler;
 mod uk_sanctions;
 mod un_sanctions;
 
